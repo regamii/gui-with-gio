@@ -124,7 +124,7 @@ func main() {
 - `th` is the material theme.
     -  Update in Gio 0.2 July 2023:
         - Gio now defaults to system fonts. This is great, one less thing to remember. However, should you want to flex your font skills, read the [July 2023 newsletter](https://gioui.org/news/2023-07).
-        - Also you may want to learn about Go's own dedicated high-quality True Type fonts? Read the [fascinating blog](https://blog.golang.org/go-fonts) and definetly visit [Bigelow & Holmes](https://bigelowandholmes.typepad.com), its creators. True old-school.
+        - Also you may want to learn about Go's own dedicated high-quality True Type fonts? Read the [fascinating blog](https://blog.golang.org/go-fonts) and definitely visit [Bigelow & Holmes](https://bigelowandholmes.typepad.com), its creators. True old-school.
 
 1. The `for` loop is more interesting. 
    - `w.Event()` blocks and waits for events. We store those as `evt`.
