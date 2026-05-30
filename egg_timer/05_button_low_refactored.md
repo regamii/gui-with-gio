@@ -35,9 +35,9 @@ Main is too long and does too much. It's better if `main()` starts and controls 
 func main() {
   go func() {
     // create new window
-		w := new(app.Window)
-		w.Option(app.Title("Egg timer"))
-		w.Option(app.Size(unit.Dp(400), unit.Dp(600)))
+    w := new(app.Window)
+    w.Option(app.Title("Egg timer"))
+    w.Option(app.Size(unit.Dp(400), unit.Dp(600)))
     if err := draw(w); err != nil {
       log.Fatal(err)
     }
@@ -70,21 +70,20 @@ A simplified version of `draw( )` shows the structure.
 
 ```go
 func draw(w *app.Window) error {
-    // ...
+  // ...
 
-    // listen for events in the window.
-    for {
-        // detect what type of event
-        switch e := w.Event().(type) {
+  // listen for events in the window.
+  for {
+    // detect what type of event
+    switch e := w.Event().(type) {
 
-        // this is sent when the application should re-render.
-        case app.FrameEvent:
-            // ...
+    // this is sent when the application should re-render.
+    case app.FrameEvent:
+      // ...
 
-        // this is sent when the application is closed
-        case app.DestroyEvent:
-            return e.Err
-        }
+    // this is sent when the application is closed
+    case app.DestroyEvent:
+      return e.Err
     }
 }
 ```

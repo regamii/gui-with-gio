@@ -33,22 +33,21 @@ That's it! Let's look at the code:
 package main
 
 import (
-    "gioui.org/app"
+  "gioui.org/app"
 )
 
 func main() {
-    go func() {
-        // create new window
-        w := new(app.Window)
+  go func() {
+    // create new window
+    w := new(app.Window)
 
-        // listen for events in the window
-        for {
-            w.Event()
-        }
-    }()
-    app.Main()
+    // listen for events in the window
+    for {
+      w.Event()
+    }
+  }()
+  app.Main()
 }
-
 ```
 
 ## Comments
@@ -84,7 +83,7 @@ The code looks simple enough, right? Still, let's take the time to to look at wh
 
     ```go
     go func {
-    // ...
+      // ...
     }()
     ```
 

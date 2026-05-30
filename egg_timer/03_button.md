@@ -32,13 +32,13 @@ To make things tidy, let's discuss imports first, then the main function later.
 
 ```go
 import (
-    "os"
+  "os"
 
-    "gioui.org/app"
-    "gioui.org/op"
-    "gioui.org/unit"
-    "gioui.org/widget"
-    "gioui.org/widget/material"
+  "gioui.org/app"
+  "gioui.org/op"
+  "gioui.org/unit"
+  "gioui.org/widget"
+  "gioui.org/widget/material"
 )
 ```
 
@@ -71,9 +71,9 @@ With imports well out of our way, let's look at the code. It's longer but still 
 func main() {
   go func() {
     // create new window
-		w := new(app.Window)
-		w.Option(app.Title("Egg timer"))
-		w.Option(app.Size(unit.Dp(400), unit.Dp(600)))
+    w := new(app.Window)
+    w.Option(app.Title("Egg timer"))
+    w.Option(app.Size(unit.Dp(400), unit.Dp(600)))
 
     // ops are the operations from the UI
     var ops op.Ops
@@ -86,23 +86,23 @@ func main() {
 
     // listen for events in the window.
     for {
-        // first grab the event
-        evt := w.Event()
+      // first grab the event
+      evt := w.Event()
 
-        // then detect the type
-        switch typ := evt.(type) {
+      // then detect the type
+      switch typ := evt.(type) {
 
-        // this is sent when the application should re-render.
-        case app.FrameEvent:
-            gtx := app.NewContext(&ops, typ)
-            btn := material.Button(th, &startButton, "Start")
-            btn.Layout(gtx)
-            typ.Frame(gtx.Ops)
+      // this is sent when the application should re-render.
+      case app.FrameEvent:
+        gtx := app.NewContext(&ops, typ)
+        btn := material.Button(th, &startButton, "Start")
+        btn.Layout(gtx)
+        typ.Frame(gtx.Ops)
 
-        // and this is sent when the application should exits
-        case app.DestroyEvent:
-            os.Exit(0)
-        }
+      // and this is sent when the application should exits
+      case app.DestroyEvent:
+        os.Exit(0)
+      }
     }
   }()
   app.Main()

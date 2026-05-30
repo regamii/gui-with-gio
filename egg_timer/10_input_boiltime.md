@@ -63,12 +63,12 @@ We also create a variable to hold the actual numerical value in the inputfield a
 With these, we now in the top of our `draw()` function find the following lines:
 
 ```go
-  // boilDurationInput is a textfield to input boil duration
-  var boilDurationInput widget.Editor
+// boilDurationInput is a textfield to input boil duration
+var boilDurationInput widget.Editor
 
-  // is the egg boiling?
-  var boiling bool
-  var boilDuration float32
+// is the egg boiling?
+var boiling bool
+var boilDuration float32
 ```
 
 ### 3. Update boil-status and read from the inputbox
@@ -159,9 +159,9 @@ layout.Rigid(
 At this point, the `boilDurationInput` is still just an empty field, so we will do some configuration:
 
 ```go
-    // Define characteristics of the input box
-    boilDurationInput.SingleLine = true
-    boilDurationInput.Alignment = text.Middle
+// Define characteristics of the input box
+boilDurationInput.SingleLine = true
+boilDurationInput.Alignment = text.Middle
 ```
 
 - `SingleLine` forces the box to always be one line high. Without it, the box will grow when the user presses enter

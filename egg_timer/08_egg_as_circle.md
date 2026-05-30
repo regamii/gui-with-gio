@@ -44,11 +44,11 @@ Points and Rectangles are used extensively, so it's worth quoting from Nigel's b
 
 ```go
 type Point struct {
-    X, Y float32
+  X, Y float32
 }
 
 type Rectangle struct {
-    Min, Max Point
+  Min, Max Point
 }
 ```
 
@@ -78,12 +78,12 @@ That's it. Let's look at the code:
 layout.Rigid(
   func(gtx C) D {
     circle := clip.Ellipse{
-       // Hard coding the x coordinate. Try resizing the window
-       // Min: image.Pt(80, 0),
-       // Max: image.Pt(320, 240),
-       // Soft coding the x coordinate. Try resizing the window
-       Min: image.Pt(gtx.Constraints.Max.X/2-120, 0),
-       Max: image.Pt(gtx.Constraints.Max.X/2+120, 240),
+      // Hard coding the x coordinate. Try resizing the window
+      // Min: image.Pt(80, 0),
+      // Max: image.Pt(320, 240),
+      // Soft coding the x coordinate. Try resizing the window
+      Min: image.Pt(gtx.Constraints.Max.X/2-120, 0),
+      Max: image.Pt(gtx.Constraints.Max.X/2+120, 240),
     }.Op(gtx.Ops)
     color := color.NRGBA{R: 200, A: 255}
     paint.FillShape(gtx.Ops, color, circle)

@@ -52,7 +52,6 @@ layout.Flex{
       return bar.Layout(gtx)
     },
   ),
-
 ```
 
 Notice how the widget itself has no state. State is maintained in the rest of the program, the widget only knows how to display the progress we send it. Any logic to increase, pause, reverse or reset we control outside the widget.
